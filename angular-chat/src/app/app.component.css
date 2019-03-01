@@ -1,0 +1,37 @@
+
+body {
+    width: 100%;
+    padding-top: 10%;
+
+    /* border: solid black;
+    border-width: thin;
+    display:block;
+    box-sizing: border-box; */
+  }
+
+  h1 {
+    font-weight: bold;
+    color: black;
+    font-size: 59px;
+  }
+
+.btn-group button {
+    background-color: #000000; /* färg på bakgrund */
+    border: 1px solid black; /* färg på border */
+    color: white; /* färg på text */
+    padding: 10px 24px;
+    cursor: pointer; /* Pekare/hand-icon när man håller över knappen */
+    float: center; 
+  }
+  
+  /* Clear floats (clearfix hack) */
+  .btn-group:after {
+    content: "";
+    clear: both;
+    display: table;
+  }
+  
+  /* Add a background color on hover */
+  .btn-group button:hover {
+    background-color: #3e8e41;
+  }
