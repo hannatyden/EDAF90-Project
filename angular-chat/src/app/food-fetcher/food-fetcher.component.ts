@@ -8,30 +8,37 @@ import { HttpClient, HttpHeaders, HttpRequest } from '@angular/common/http';
 })
 export class FoodFetcherComponent implements OnInit {
 
+  myTop: any[] = [];
+
   constructor(private http: HttpClient) { }
+
+  ngOnInit() {
+    
+  }
 
   fetchTopVitamin(string) {
     return this.http.get('../assets/food.json').subscribe((res) => {
-      let vitaminsB6 = [];
+      let vitamins = [];
       for(let i in res) {
         if(res[i].Data.Vitamins[string] > 0){
 
-          let vitaminB6 = res[i];
-          vitaminB6 = {...vitaminB6, val:res[i].Data.Vitamins[string]};
-          vitaminsB6.push(vitaminB6);
+          let vitamin = res[i];
+          vitamin = {...vitamin, val:res[i].Data.Vitamins[string]};
+          vitamins.push(vitamin);
         }
       }
-      vitaminsB6.sort(function(a, b) {
+      vitamins.sort(function(a, b) {
         return b.val - a.val;
       });
 
-      let topVitaminB6 = [];
+      let topVitamin = [];
       for(let i = 0; i < 10; i++) {
-        topVitaminB6.push(vitaminsB6[i]);
+        topVitamin.push(vitamins[i]);
       }
-      console.log(topVitaminB6);
+      this.myTop = topVitamin;
     });
   }
+
 
   fetchFood() {
     return this.http.get('.../assets/food.json').subscribe((res) => {

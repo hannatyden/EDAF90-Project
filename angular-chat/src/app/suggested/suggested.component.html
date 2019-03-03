@@ -1,18 +1,38 @@
 <body>
     
-        <form>
-        <mat-form-field>
-            <p>Här kan du välja vilken vitamin som du vill veta mer om. 
-                Du kan också se vilka livsmedel som innehåller den valda typen av vitamin.</p>
-            <select matNativeControl placeholder="Select vitamin" [(ngModel)]="selectedVitamin" name="vitamin">
-              <option value="" selected></option>
-              <option *ngFor="let vitamin of vitamins" [value]="vitamin.value">
-                {{vitamin.viewValue}}
-              </option>
-            </select>
-          </mat-form-field>
-          <p> Selected vitamin: {{selectedVitamin}} </p>
-        </form>
+<div className="hej">
+    <mat-form-field >
+        <p>Här kan du välja vilken vitamin som du vill veta mer om. 
+            Du kan också se vilka livsmedel som innehåller den valda typen av vitamin.</p>
+        <mat-select [(value)]="selected">
+          <mat-option>None</mat-option>
+          <mat-option value="Vitamin A">Vitamin A</mat-option>
+          <mat-option value="Vitamin B1">Vitamin B1</mat-option>
+          <mat-option value="Vitamin B2">Vitamin B2</mat-option>
+          <mat-option value="Vitamin B3">Vitamin B3</mat-option>
+          <mat-option value="Vitamin B5">Vitamin B5</mat-option>
+          <mat-option value="Vitamin B6">Vitamin B6</mat-option>
+          <mat-option value="Vitamin B7">Vitamin B7</mat-option>
+          <mat-option value="Vitamin B12">Vitamin B12</mat-option>
+          <mat-option value="C-vitamin">C-vitamin</mat-option>
+          <mat-option value="D-vitamin">D-vitamin</mat-option>
+          <mat-option value="E-vitamin">E-vitamin</mat-option>
+          <mat-option value="Folsyra">Folsyra</mat-option>
+          <mat-option value="K-vitamin">K-vitamin</mat-option>
+        </mat-select>
+      </mat-form-field>
+      
+      <p>Selected: {{selected}}</p>
+
+      <p id="demo"></p>
+
       
 
-    </body>
+      <button (click)="fetchTop(selected)">click</button>
+    </div>
+
+    <div *ngFor="let d of myTop">
+        {{d}}
+    </div>
+    
+</body>
