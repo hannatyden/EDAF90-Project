@@ -1,0 +1,18 @@
+<body>
+    
+        <form>
+        <mat-form-field>
+            <p>Här kan du välja vilken vitamin som du vill veta mer om. 
+                Du kan också se vilka livsmedel som innehåller den valda typen av vitamin.</p>
+            <select matNativeControl placeholder="Select vitamin" [(ngModel)]="selectedVitamin" name="vitamin">
+              <option value="" selected></option>
+              <option *ngFor="let vitamin of vitamins" [value]="vitamin.value">
+                {{vitamin.viewValue}}
+              </option>
+            </select>
+          </mat-form-field>
+          <p> Selected vitamin: {{selectedVitamin}} </p>
+        </form>
+      
+
+    </body>

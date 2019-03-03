@@ -7,6 +7,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ResultComponent } from './result/result.component';
 import { HeaderComponent } from './components/header/header.component';
 import { HomeComponent } from './home/home.component';
+import { SuggestedComponent } from './suggested/suggested.component';
 
 @NgModule({
   declarations: [
@@ -14,6 +15,7 @@ import { HomeComponent } from './home/home.component';
     ResultComponent,
     HeaderComponent,
     HomeComponent,
+    SuggestedComponent,
   ],
   imports: [
     BrowserModule,
