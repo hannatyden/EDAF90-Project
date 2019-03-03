@@ -18,12 +18,13 @@ import { SuggestedComponent } from './suggested/suggested.component';
     SuggestedComponent,
   ],
   imports: [
+    HttpClientModule,
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     MatCheckboxModule
   ],
-  providers: [],
+  providers: [ FoodFetcherComponent ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
