@@ -1,3 +1,21 @@
-<p>
-  result works!
-</p>
+<h1 class='vit-titel'>Ditt dagliga intag av vitaminer</h1>
+
+<div class='result-list'>
+<mat-list #shoes>
+  <mat-list-item *ngFor="let vits of vitamins">
+    <div matLine>
+    <span>
+    {{vits.name}}
+    </span>
+    <span class='list-RDI'>
+    {{vits.amount}}, {{vits.unit}}    (xx % of RDI)
+    </span>
+    </div>
+  </mat-list-item>
+</mat-list>
+</div>
+
+<div class='result-buttons'>
+    <a style="margin: 5px" mat-raised-button routerLink="">Tillbaka till måltider</a>
+    <a style="margin: 5px" color="primary" mat-raised-button routerLink="">Hitta råvaror med vitaminer</a>
+</div>

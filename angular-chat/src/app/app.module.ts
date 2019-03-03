@@ -1,6 +1,8 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { MatCheckboxModule } from '@angular/material';
+import { MatListModule } from '@angular/material';
+import { MatButtonModule } from '@angular/material'; 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -22,7 +24,9 @@ import { SuggestedComponent } from './suggested/suggested.component';
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    MatCheckboxModule
+    MatCheckboxModule,
+    MatListModule,
+    MatButtonModule
   ],
   providers: [ FoodFetcherComponent ],
   bootstrap: [AppComponent]
