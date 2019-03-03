@@ -3,6 +3,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { AppComponent } from './app.component';
 import { ResultComponent } from './result/result.component';
 import {HomeComponent} from './home/home.component';
+import {SuggestedComponent} from './suggested/suggested.component';
 
 const routes: Routes = [
   {
@@ -13,6 +14,10 @@ const routes: Routes = [
   {
     path: 'result',
     component: ResultComponent,
+  },
+  {
+    path: 'suggested',
+    component: SuggestedComponent,
   }
 ];
 
