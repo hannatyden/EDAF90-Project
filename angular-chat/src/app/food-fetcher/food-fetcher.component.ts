@@ -10,6 +10,8 @@ export class FoodFetcherComponent implements OnInit {
 
   constructor(private http: HttpClient) { }
 
+  ngOnInit(){}
+
   fetchTopVitamin(string) {
     return this.http.get('../assets/food.json').subscribe((res) => {
       let vitaminsB6 = [];

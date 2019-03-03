@@ -10,6 +10,8 @@ import { ResultComponent } from './result/result.component';
 import { HeaderComponent } from './components/header/header.component';
 import { HomeComponent } from './home/home.component';
 import { SuggestedComponent } from './suggested/suggested.component';
+import {HttpClientModule} from '@angular/common/http';
+import {FoodFetcherComponent} from './food-fetcher/food-fetcher.component';
 
 @NgModule({
   declarations: [
@@ -18,6 +20,7 @@ import { SuggestedComponent } from './suggested/suggested.component';
     HeaderComponent,
     HomeComponent,
     SuggestedComponent,
+    FoodFetcherComponent,
   ],
   imports: [
     HttpClientModule,
