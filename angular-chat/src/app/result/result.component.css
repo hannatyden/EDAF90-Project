@@ -1,0 +1,24 @@
+.result-list{
+  margin: auto;
+  width: 25%;
+  border: 3px solid cornflowerblue;
+  padding: 10px;
+  background-color: lavender;
+}
+
+.result-buttons{
+  text-align: right;
+  margin: auto;
+  width: 25%;
+  padding: 10px;
+}
+
+.vit-titel{
+  text-align: center;
+  font-family: 'Segoe UI', Tahoma, sans-serif;
+  font-weight: lighter;
+}
+
+.list-RDI{
+  float: right;
+}
