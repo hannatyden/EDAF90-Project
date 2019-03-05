@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {FoodFetcherComponent} from '../food-fetcher/food-fetcher.component';
 
 export interface Vitamin {
   value: string;
@@ -6,40 +7,45 @@ export interface Vitamin {
 }
 
 @Component({
+  providers: [FoodFetcherComponent],
   selector: 'app-suggested',
   templateUrl: './suggested.component.html',
   styleUrls: ['./suggested.component.css']
 })
 export class SuggestedComponent implements OnInit {
 
-  constructor() { }
+  constructor(private comp: FoodFetcherComponent) { }
 
   selectedValue: string;
   selectedVitamin: string;
+  vits;
+
+  public fetchTop(string) {
+    this.comp.fetchTopVitamin(string).subscribe( vits => {
+      this.vits = vits;
+      console.log(vits);
+    });
+
+  }
+
+  public newFetch() {
+    this.comp.fetchTopsVitamin();
+  }
+
 
   vitamins: Vitamin[] = [
-    {value: 'Vitamin A', viewValue: 'Vitamin A'},
-    {value: 'Vitamin B1', viewValue: 'Vitamin B1'},
-    {value: 'Vitamin B2', viewValue: 'Vitamin B2'},
-    {value: 'Vitamin B3', viewValue: 'Vitamin B3'},
-    {value: 'Vitamin B5', viewValue: 'Vitamin B2'},
+    {value: 'Vitamin A - IU', viewValue: 'Vitamin A - IU'},
+    {value: 'Vitamin A - RAE', viewValue: 'Vitamin A - RAE'},
     {value: 'Vitamin B6', viewValue: 'Vitamin B6'},
-    {value: 'Vitamin B7', viewValue: 'Vitamin B7'},
     {value: 'Vitamin B12', viewValue: 'Vitamin B12'},
-    {value: 'C-vitamin', viewValue: 'C-vitamin'},
-    {value: 'D-vitamin', viewValue: 'D-vitamin'},
-    {value: 'E-vitamin', viewValue: 'E-vitamin'},
-    {value: 'Folsyra', viewValue: 'Folsyra'},
-    {value: 'K-vitamin', viewValue: 'K-vitamin'}
+    {value: 'Vitamin C', viewValue: 'Vitamin C'},
+    {value: 'Vitamin E', viewValue: 'Vitamin E'},
+    {value: 'Vitamin K', viewValue: 'Vitamin K'}
 
   ];
 
   ngOnInit() {
-  
+
   }
 
 }
-
-
-
-

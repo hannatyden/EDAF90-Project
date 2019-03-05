@@ -14,6 +14,7 @@ import { HomeComponent } from './home/home.component';
 import { SuggestedComponent } from './suggested/suggested.component';
 import {HttpClientModule} from '@angular/common/http';
 import {FoodFetcherComponent} from './food-fetcher/food-fetcher.component';
+import {MatSelectModule} from '@angular/material/select';
 
 @NgModule({
   declarations: [
@@ -33,6 +34,7 @@ import {FoodFetcherComponent} from './food-fetcher/food-fetcher.component';
     MatListModule,
     MatButtonModule,
     MatToolbarModule,
+    MatSelectModule,
     MatIconModule
   ],
   providers: [ FoodFetcherComponent ],

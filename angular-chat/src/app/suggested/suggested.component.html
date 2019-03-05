@@ -1,6 +1,29 @@
-<body>
-    
 
-      
 
-    </body>
+
+<div class="formGroup" align="center">
+  <div class="col-md-8">
+    <p>Välj en vitamin från listan och klicka på knappen för att se top 10 livsmedel som innehåller din valda vitamin.</p>
+    <div class="input-group">
+      <mat-form-field>
+        <mat-select placeholder="Välj en vitamin" [(value)]="selected">
+            <mat-option *ngFor="let vit of vitamins" [value]="vit.viewValue">{{vit.value}}</mat-option>
+            <mat-option *ngFor="let v of vits">{{v.name}}</mat-option>
+        </mat-select>
+      </mat-form-field>
+      <div mat-dialog-actions>
+        <button mat-raised-button (click)="fetchTop(selected)">Top 10</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<ol>
+  <li *ngFor="let v of vits">{{v|json}}</li>
+</ol>
+
+
+
+
+<!--vits: {{vits|json}}-->
