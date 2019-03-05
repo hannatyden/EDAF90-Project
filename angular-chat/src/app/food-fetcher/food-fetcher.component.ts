@@ -38,15 +38,20 @@ export class FoodFetcherComponent implements OnInit {
         for(let i = 0; i < 10; i++) {
           topVitaminB6.push(vitaminsB6[i].name);
         }
-//        console.log(topVitaminB6);
-//        console.log("returning list " + topVitaminB6);
         return topVitaminB6;
       })
     );
 
   }
 
-  fetchFoods() {
+  fetchTopsVitamin() {
+
+    return this.http.get('../assets/food.json').pipe(map(data => {})).subscribe(res =>{
+        console.log(res);
+    });
+  }
+
+  fetchFood() {
     return this.http.get('../assets/food.json').pipe(
       map((res) => {
         let foods = [];
@@ -58,5 +63,6 @@ export class FoodFetcherComponent implements OnInit {
         return foods;
       })
     );
+
   }
 }
