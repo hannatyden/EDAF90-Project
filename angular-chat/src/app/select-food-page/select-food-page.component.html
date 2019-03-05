@@ -8,8 +8,6 @@
         <mat-option (click)="addFood(SelectedFood)" *ngFor="let food of (filteredOptions | async)" [value]="food.name">
           {{food.name}}
         </mat-option>
-
-        
       </mat-autocomplete>
     </mat-form-field>
   </form>
@@ -18,3 +16,4 @@
     <li *ngFor="let food of addedFoods">{{food|json}}</li>
   </ol>
 
+<button (click)="checkVitaminCount()">See results</button>
