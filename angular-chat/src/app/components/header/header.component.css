@@ -1,3 +1,11 @@
 .active-link{
     color: cornflowerblue;
 }
+
+a:hover {
+    color: royalblue;
+}
+
+.mat-toolbar{
+    background-color: rgba(152, 251, 152, 0.25)
+}

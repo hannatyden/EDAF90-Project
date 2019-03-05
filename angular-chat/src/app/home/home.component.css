@@ -1,7 +1,7 @@
 
 body {
     width: 100%;
-    padding-top: 10%;
+    
 
     /* border: solid black;
     border-width: thin;
@@ -10,17 +10,19 @@ body {
   }
 
   h1 {
-    font-weight: bold;
-    color: black;
-    font-size: 59px;
+    text-align: center;
+    font-family: 'Segoe UI', Tahoma, sans-serif;
+    font-weight: lighter;
+    font-size: 50px;
   }
 
-.btn-group button {
-    background-color: #000000; /* färg på bakgrund */
-    border: 1px solid black; /* färg på border */
-    color: white; /* färg på text */
+  .btn-group {
+    margin: 30px;
+  }
+
+.btn-group a {
+    font-size: 15px;
     padding: 10px 24px;
-    cursor: pointer; /* Pekare/hand-icon när man håller över knappen */
     float: center; 
   }
   
@@ -32,6 +34,6 @@ body {
   }
   
   /* Add a background color on hover */
-  .btn-group button:hover {
-    background-color: #3e8e41;
+  .btn-group a:hover {
+    background-color: cornflowerblue;
   }

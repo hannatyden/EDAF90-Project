@@ -1,8 +1,8 @@
 <h1 class='vit-titel'>Ditt dagliga intag av vitaminer</h1>
 
 <div class='result-list'>
-<mat-list #shoes>
-  <mat-list-item *ngFor="let vits of vitamins">
+<mat-list #list>
+  <mat-list-item *ngFor="let vits of vitamins; let i = index;" >
     <div matLine>
     <span>
     {{vits.name}}
@@ -16,6 +16,6 @@
 </div>
 
 <div class='result-buttons'>
-    <a style="margin: 5px" mat-raised-button routerLink="">Tillbaka till måltider</a>
-    <a style="margin: 5px" color="primary" mat-raised-button routerLink="/suggested">Hitta råvaror med vitaminer</a>
+    <a class='prev' style="margin: 5px" mat-raised-button routerLink="">Tillbaka till måltider</a>
+    <a class='next' style="margin: 5px" color="primary" mat-raised-button routerLink="/suggested">Hitta råvaror med vitaminer</a>
 </div>
