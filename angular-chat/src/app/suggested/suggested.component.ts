@@ -28,9 +28,7 @@ export class SuggestedComponent implements OnInit {
 
   }
 
-  public newFetch() {
-    this.comp.fetchTopsVitamin();
-  }
+
 
 
   vitamins: Vitamin[] = [

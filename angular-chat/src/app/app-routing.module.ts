@@ -4,6 +4,7 @@ import { AppComponent } from './app.component';
 import { ResultComponent } from './result/result.component';
 import {HomeComponent} from './home/home.component';
 import {SuggestedComponent} from './suggested/suggested.component';
+import {SelectFoodPageComponent} from './select-food-page/select-food-page.component';
 
 const routes: Routes = [
   {
@@ -18,7 +19,12 @@ const routes: Routes = [
   {
     path: 'suggested',
     component: SuggestedComponent,
+  },
+  {
+    path: 'select-food-page',
+    component: SelectFoodPageComponent,
   }
+  
 ];
 
 @NgModule({
