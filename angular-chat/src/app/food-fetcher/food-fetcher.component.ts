@@ -46,21 +46,17 @@ export class FoodFetcherComponent implements OnInit {
 
   }
 
-  fetchTopsVitamin() {
-
-    return this.http.get('../assets/food.json').pipe(map(data => {})).subscribe(res =>{
-        console.log(res);
-    });
-  }
-
-  fetchFood() {
-    return this.http.get('.../assets/food.json').subscribe((res) => {
-      let foodList = [];
-      for(let i in res) {
-        let food = res[i];
-        foodList.push(food);
-      }
-      return foodList;
-    });
+  fetchFoods() {
+    return this.http.get('../assets/food.json').pipe(
+      map((res) => {
+        let foods = [];
+        for(let i in res) {
+          let food = res[i];
+          food = {...food, name:res[i].Description};
+          foods.push(food);
+        }
+        return foods;
+      })
+    );
   }
 }
