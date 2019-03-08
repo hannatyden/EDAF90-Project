@@ -4,20 +4,21 @@ import {Observable, of} from 'rxjs';
 import {map, startWith} from 'rxjs/operators';
 import {FoodFetcherComponent} from '../food-fetcher/food-fetcher.component';
 import { VitaminService } from '../vitamin.service';
+import {ResultComponent} from '../result/result.component';
 
 export interface Food {
   name: string;
   Description: {};
   Data: {
     "Vitamins": {
-      "Vitamin A - IU": number, 
-      "Vitamin C": number, 
-      "Vitamin B12": number, 
-      "Vitamin B6": number, 
-      "Vitamin A - RAE": number, 
-      "Vitamin E": number, 
+      "Vitamin A - IU": number,
+      "Vitamin C": number,
+      "Vitamin B12": number,
+      "Vitamin B6": number,
+      "Vitamin A - RAE": number,
+      "Vitamin E": number,
       "Vitamin K": number
-    }, 
+    },
   }
 }
 
@@ -49,7 +50,8 @@ export class SelectFoodPageComponent implements OnInit {
     {value: 'Vitamin E', number: 0},
     {value: 'Vitamin K', number: 0}
   ];
-  
+  private loadComponent = false;
+
   public fetchFood() {
     this.comp.fetchFood().subscribe(foods => {
         this.foods = foods;
@@ -77,6 +79,7 @@ export class SelectFoodPageComponent implements OnInit {
     }
     console.log(this.vitaminChecker);
     VitaminService.prototype.checkedVitamins = this.vitaminChecker;
+    this.loadComponent = true;
   }
 
   myControl: FormControl = new FormControl();

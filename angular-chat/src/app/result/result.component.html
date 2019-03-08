@@ -8,7 +8,7 @@
     {{vits.value}}
     </span>
     <span class='list-RDI'>
-    {{vits.number}}, {{vits.unit}}    (xx % of RDI)
+      ({{vits.percentage}} % of RDI)
     </span>
     </div>
   </mat-list-item>
@@ -17,5 +17,6 @@
 
 <div class='result-buttons'>
     <a class='prev' style="margin: 5px" mat-raised-button routerLink="">Tillbaka till måltider</a>
+    <a class='next' style="margin: 5px" mat-raised-button (click)="calculateRDIVitamins()">Beräkna procent</a>
     <a class='next' style="margin: 5px" color="primary" mat-raised-button routerLink="/suggested">Hitta råvaror med vitaminer</a>
 </div>
