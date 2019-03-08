@@ -7,6 +7,18 @@ import {FoodFetcherComponent} from '../food-fetcher/food-fetcher.component';
 
 export interface Food {
   name: string;
+  Description: {};
+  Data: {
+    "Vitamins": {
+      "Vitamin A - IU": number, 
+      "Vitamin C": number, 
+      "Vitamin B12": number, 
+      "Vitamin B6": number, 
+      "Vitamin A - RAE": number, 
+      "Vitamin E": number, 
+      "Vitamin K": number
+    }, 
+  }
 }
 
 export interface Vitamin {
