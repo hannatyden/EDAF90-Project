@@ -1,4 +1,4 @@
-<h1 class='vit-titel'>Ditt dagliga intag av vitaminer</h1>
+<h1 class='vit-titel'>Ditt intag av vitaminer</h1>
 
 <div class='result-list'>
 <mat-list #list>
@@ -8,7 +8,7 @@
     {{vits.value}}
     </span>
     <span class='list-RDI'>
-    {{vits.number}}, {{vits.unit}}    (xx % of RDI)
+    {{vits.number}} µg
     </span>
     </div>
   </mat-list-item>
@@ -16,6 +16,6 @@
 </div>
 
 <div class='result-buttons'>
-    <a class='prev' style="margin: 5px" mat-raised-button routerLink="">Tillbaka till måltider</a>
+    <a class='prev' style="margin: 5px" mat-raised-button routerLink="/select-food-page">Tillbaka till måltider</a>
     <a class='next' style="margin: 5px" color="primary" mat-raised-button routerLink="/suggested">Hitta råvaror med vitaminer</a>
 </div>

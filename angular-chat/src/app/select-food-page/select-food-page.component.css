@@ -1,13 +1,51 @@
 .example-form {
-  min-width: 150px;
-  max-width: 500px;
-  width: 100%;
+  margin: auto;
+  width: 400px;
 }
 
 .example-full-width {
   width: 100%;
 }
 
+.all-select{
+  border: 3px solid cornflowerblue;
+  width: 420px;
+  margin: auto;
+}
+
+.example-option{
+  margin: auto;
+  width: 380px;
+  background-color: lavender;
+}
+
+.example-foods{
+  padding: 20px;
+  text-align: auto;
+}
+
 mat-form-field{
   width: 50%;
+}
+
+
+.result-buttons{
+  text-align: right;
+  margin: auto;
+  width: 400px;
+  padding: 10px;
+}
+
+.prev:hover {
+  background-color: lightgray;
+}
+
+.next:hover {
+  background-color: cornflowerblue;
+}
+
+.select-titel{
+  text-align: center;
+  font-family: 'Segoe UI', Tahoma, sans-serif;
+  font-weight: lighter;
 }
