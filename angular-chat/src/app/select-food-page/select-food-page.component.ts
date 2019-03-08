@@ -41,8 +41,6 @@ export class SelectFoodPageComponent implements OnInit {
   public fetchFood() {
     this.comp.fetchFood().subscribe(foods => {
         this.foods = foods;
-        console.log(foods[0]);
-        console.log(this.addedFoods[0]);
     });
   }
 
@@ -65,6 +63,7 @@ export class SelectFoodPageComponent implements OnInit {
         this.vitaminChecker[k].number = this.vitaminChecker[k].number + val;
       }
     }
+    console.log(this.vitaminChecker);
   }
 
   myControl: FormControl = new FormControl();
