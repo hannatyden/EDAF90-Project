@@ -16,4 +16,7 @@
     <li *ngFor="let food of addedFoods">{{food|json}}</li>
   </ol>
 
-<button (click)="checkVitaminCount()">See results</button>
+<a routerLink="/result" routerLinkActive="active-link"><button class='next' style="margin: 5px" color="primary" mat-raised-button (click)="checkVitaminCount()">See results</button></a>
+<div *ngIf = 'loadComponent'>
+  <app-result></app-result>
+</div>
