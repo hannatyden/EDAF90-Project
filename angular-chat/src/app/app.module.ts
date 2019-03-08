@@ -21,6 +21,7 @@ import {MatSelectModule} from '@angular/material/select';
 import { ReactiveFormsModule }  from '@angular/forms';
 import { FormsModule } from  '@angular/forms';
 import { SelectFoodPageComponent } from './select-food-page/select-food-page.component';
+import { VitaminService } from './vitamin.service';
 
 
 
@@ -52,7 +53,7 @@ import { SelectFoodPageComponent } from './select-food-page/select-food-page.com
     MatFormFieldModule,
     FormsModule
   ],
-  providers: [ FoodFetcherComponent ],
+  providers: [ FoodFetcherComponent, VitaminService ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
