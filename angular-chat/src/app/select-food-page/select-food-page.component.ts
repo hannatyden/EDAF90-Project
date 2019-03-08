@@ -1,9 +1,9 @@
 import {Component, OnInit} from '@angular/core';
 import { FormControl} from '@angular/forms';
-import {Observable} from 'rxjs';
+import {Observable, of} from 'rxjs';
 import {map, startWith} from 'rxjs/operators';
 import {FoodFetcherComponent} from '../food-fetcher/food-fetcher.component';
-
+import { VitaminService } from '../vitamin.service';
 
 export interface Food {
   name: string;
@@ -33,7 +33,7 @@ export interface Vitamin {
   styleUrls: ['./select-food-page.component.css']
 })
 export class SelectFoodPageComponent implements OnInit {
-  constructor(private comp: FoodFetcherComponent) {
+  constructor(private comp: FoodFetcherComponent, private vitaminService: VitaminService) {
 
   }
 
@@ -41,7 +41,7 @@ export class SelectFoodPageComponent implements OnInit {
   addedFoods: Food[] = [];
   addedFoodObjects: Food[] = [];
   vitaminChecker: Vitamin[] = [
-    {value: 'Vitamin A - IU', number: 0},
+    {value: 'Vitamin A - IU', number: 0,},
     {value: 'Vitamin A - RAE', number: 0},
     {value: 'Vitamin B6', number: 0},
     {value: 'Vitamin B12', number: 0},
@@ -49,7 +49,7 @@ export class SelectFoodPageComponent implements OnInit {
     {value: 'Vitamin E', number: 0},
     {value: 'Vitamin K', number: 0}
   ];
-
+  
   public fetchFood() {
     this.comp.fetchFood().subscribe(foods => {
         this.foods = foods;
@@ -76,6 +76,7 @@ export class SelectFoodPageComponent implements OnInit {
       }
     }
     console.log(this.vitaminChecker);
+    VitaminService.prototype.checkedVitamins = this.vitaminChecker;
   }
 
   myControl: FormControl = new FormControl();

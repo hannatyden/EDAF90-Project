@@ -5,10 +5,10 @@
   <mat-list-item *ngFor="let vits of vitamins; let i = index;" >
     <div matLine>
     <span>
-    {{vits.name}}
+    {{vits.value}}
     </span>
     <span class='list-RDI'>
-    {{vits.amount}}, {{vits.unit}}    (xx % of RDI)
+    {{vits.number}}, {{vits.unit}}    (xx % of RDI)
     </span>
     </div>
   </mat-list-item>
