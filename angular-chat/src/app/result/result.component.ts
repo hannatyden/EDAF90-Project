@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { VitaminResult } from '../result/vitaminresult';
-//import { TESTVITAMINRESULT } from '../result/test-vitamins'
 import { SelectFoodPageComponent } from '../select-food-page/select-food-page.component';
 import { VitaminService } from '../vitamin.service';
 import { Vitamin } from '../select-food-page/select-food-page.component';
@@ -13,14 +12,14 @@ import { Vitamin } from '../select-food-page/select-food-page.component';
 export class ResultComponent implements OnInit {
 
   vitamins: Vitamin [];
-  RDIVitamins: Vitamin [] = [
-    {value: 'Vitamin A - IU', number: 5000, percentage: 0},
-    {value: 'Vitamin A - RAE', number: 1200, percentage: 0},
-    {value: 'Vitamin B6', number: 2.5, percentage: 0},
-    {value: 'Vitamin B12', number: 2, percentage: 0},
-    {value: 'Vitamin C', number: 40, percentage: 0},
-    {value: 'Vitamin E', number: 15, percentage: 0},
-    {value: 'Vitamin K', number: 90, percentage: 0}
+  RDIVitamins: VitaminResult [] = [
+    {name: 'Vitamin A - IU', amount: 50000, percentage: 0},
+    {name: 'Vitamin A - RAE', amount: 12000, percentage: 0},
+    {name: 'Vitamin B6', amount: 2500, percentage: 0},
+    {name: 'Vitamin B12', amount: 2000, percentage: 0},
+    {name: 'Vitamin C', amount: 4000, percentage: 0},
+    {name: 'Vitamin E', amount: 1500, percentage: 0},
+    {name: 'Vitamin K', amount: 900, percentage: 0}
   ];
   percentage: String [] = [];
 
@@ -33,8 +32,8 @@ export class ResultComponent implements OnInit {
 
   calculateRDIVitamins() {
     for(let i in this.vitamins) {
-      let percentage = (this.vitamins[i].number / this.RDIVitamins[i].number)*100;
-      this.vitamins[i].percentage = percentage.toFixed(2);
+      let percentage = (this.vitamins[i].number / this.RDIVitamins[i].amount)*100;
+      this.vitamins[i].percentage = Math.round(percentage);
     }
      console.log(this.vitamins[0].percentage);
   }
@@ -42,5 +41,6 @@ export class ResultComponent implements OnInit {
   ngOnInit() {
       this.getVitamins();
       console.log(this.vitamins);
+      this.calculateRDIVitamins();
   }
 }

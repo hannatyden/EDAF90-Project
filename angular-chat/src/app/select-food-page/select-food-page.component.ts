@@ -11,12 +11,12 @@ export interface Food {
   Description: {};
   Data: {
     "Vitamins": {
-      "Vitamin A - IU": number,
-      "Vitamin C": number,
+      "Vitamin A - IU": number, 
+      "Vitamin C": number, 
       "Vitamin B12": number,
-      "Vitamin B6": number,
-      "Vitamin A - RAE": number,
-      "Vitamin E": number,
+      "Vitamin B6": number, 
+      "Vitamin A - RAE": number, 
+      "Vitamin E": number, 
       "Vitamin K": number
     },
   }
@@ -25,6 +25,7 @@ export interface Food {
 export interface Vitamin {
   value: string;
   number: number;
+  percentage: number;
 }
 
 @Component({
@@ -42,13 +43,13 @@ export class SelectFoodPageComponent implements OnInit {
   addedFoods: Food[] = [];
   addedFoodObjects: Food[] = [];
   vitaminChecker: Vitamin[] = [
-    {value: 'Vitamin A - IU', number: 0,},
-    {value: 'Vitamin A - RAE', number: 0},
-    {value: 'Vitamin B6', number: 0},
-    {value: 'Vitamin B12', number: 0},
-    {value: 'Vitamin C', number: 0},
-    {value: 'Vitamin E', number: 0},
-    {value: 'Vitamin K', number: 0}
+    {value: 'Vitamin A - IU', number: 0, percentage: 0},
+    {value: 'Vitamin A - RAE', number: 0, percentage: 0},
+    {value: 'Vitamin B6', number: 0, percentage: 0},
+    {value: 'Vitamin B12', number: 0, percentage: 0},
+    {value: 'Vitamin C', number: 0, percentage: 0},
+    {value: 'Vitamin E', number: 0, percentage: 0},
+    {value: 'Vitamin K', number: 0, percentage: 0}
   ];
   private loadComponent = false;
 

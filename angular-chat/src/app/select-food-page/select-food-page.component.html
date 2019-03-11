@@ -1,6 +1,6 @@
-<h1>Välj mat</h1>
+<h1 class='select-titel'>Välj mat</h1>
 
-
+<div class='all-select'>
 <form class="example-form" (ngSubmit)="addFood($food)">
     <mat-form-field class="example-full-width">
       <input type="text" placeholder="Här kan du skriva vad du har ätit" aria-label="Number" matInput [formControl]="myControl" [matAutocomplete]="auto" [(ngModel)]="SelectedFood">
@@ -12,11 +12,12 @@
     </mat-form-field>
   </form>
 
-  <ol>
-    <li *ngFor="let food of addedFoods">{{food|json}}</li>
+  <ol class='select-option'>
+    <li class='select-foods' *ngFor="let food of addedFoods">{{food|json}}</li>
   </ol>
+</div>
 
-<a routerLink="/result" routerLinkActive="active-link"><button class='next' style="margin: 5px" color="primary" mat-raised-button (click)="checkVitaminCount()">See results</button></a>
-<div *ngIf = 'loadComponent'>
-  <app-result></app-result>
+<div class='select-buttons'>
+<a class='prev' style='margin: 5px' mat-raised-button routerLink=''>Tillbaka till startsidan</a>
+<a class='next' style="margin: 5px" color="primary" mat-raised-button routerLink="/result" (click)="checkVitaminCount()">Räkna ut ditt vitaminintag</a>
 </div>
